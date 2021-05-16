@@ -37,7 +37,7 @@ pipeline {
     stage("Deploy") {
       when { branch "master" }
       steps {
-        container("kustomize") {
+        container("shipa") {
           sh "shipa app deploy --app $PROJECT --image ${REGISTRY_USER}/${PROJECT}:${env.BRANCH_NAME.toLowerCase()}-${BUILD_NUMBER}"
         }
       }
