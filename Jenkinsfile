@@ -27,7 +27,6 @@ pipeline {
             } catch (err) {}
           }
           sh "shipa app deploy --app $PROJECT-${env.BRANCH_NAME.toLowerCase()} --image ${REGISTRY_USER}/${PROJECT}:${env.BRANCH_NAME.toLowerCase()}-${BUILD_NUMBER}"
-          sleep 5
           sh "curl http://${env.BRANCH_NAME.toLowerCase()}$PROJECT.3.65.148.237.nip.io"
         }
         container("shipa") {
