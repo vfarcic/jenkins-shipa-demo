@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "/" 
+baseURL = "/"
 languageCode = "en-us"
 title = "The DevOps Toolkit Series"
 theme = "forty"

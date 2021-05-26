@@ -21,11 +21,13 @@ pipeline {
       when { changeRequest target: "master" }
       steps {
         container("shipa") {
-          sh "shipa app create $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
+          script {
+            try {
+                sh "shipa app create $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
+            } catch (err) {}
+          }
           sh "shipa app deploy --app $PROJECT-${env.BRANCH_NAME.toLowerCase()} --image ${REGISTRY_USER}/${PROJECT}:${env.BRANCH_NAME.toLowerCase()}-${BUILD_NUMBER}"
-        }
-        container("kustomize") {
-          sh "kubectl --namespace $PROJECT-${env.BRANCH_NAME.toLowerCase()} rollout status deployment jenkins-demo"
+          sleep 5
           sh "curl http://${env.BRANCH_NAME.toLowerCase()}$PROJECT.3.65.148.237.nip.io"
         }
         container("shipa") {
