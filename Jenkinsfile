@@ -27,7 +27,7 @@ pipeline {
         container("kustomize") {
           // TODO: Uncomment
           // sh "kubectl --namespace $PROJECT-${env.BRANCH_NAME.toLowerCase()} rollout status deployment jenkins-demo"
-          sh "curl http://${env.BRANCH_NAME.toLowerCase()}$PROJECT.acme.com"
+          sh "curl http://${env.BRANCH_NAME.toLowerCase()}$PROJECT.3.65.148.237.nip.io"
         }
         container("shipa") {
           sh "shipa app remove --app $PROJECT-${env.BRANCH_NAME.toLowerCase()} --assume-yes"
