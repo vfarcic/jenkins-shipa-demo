@@ -1,4 +1,4 @@
-# Site settings
+# Site settings 
 baseURL = "/"
 languageCode = "en-us"
 title = "The DevOps Toolkit Series"
@@ -33,7 +33,7 @@ disqusShortname = ""
   # TODO: Remove params
   [params.navigation]
     title = "The DevOps Toolkit"
-    subtitle = "By Viktor Farcic"
+    subtitle = "Shipa Rocks!!!"
     menu = "Menu"
     # Optional logo as brand stored in img/
     # logo = "logo.png"
@@ -149,3 +149,4 @@ disqusShortname = ""
       icon = "fa-linkedin"
       url= "https://www.linkedin.com/in/viktorfarcic/"
       label = "LinkedIn"
+
