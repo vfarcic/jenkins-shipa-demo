@@ -39,7 +39,6 @@ pipeline {
       when { branch "master" }
       steps {
         container("shipa") {
-          sh "shipa app list"
           sh "shipa app deploy --app $PROJECT --image ${REGISTRY_USER}/${PROJECT}:${env.BRANCH_NAME.toLowerCase()}-${BUILD_NUMBER}"
         }
       }
